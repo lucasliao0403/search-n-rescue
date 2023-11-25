@@ -11,7 +11,9 @@ export default function Home() {
   async function enterImage() {
       const data = await axios.post("http://localhost:5000/image", 
         {
-          body: "beepbeepboopboop"
+          body: {
+              id: "a"
+          }
 
         }).catch (function (e) {
             console.warn("nope") 
