@@ -1,7 +1,23 @@
 
 .header {
     height: 60px;
-    background-color: rgb(var(--choco));
-    color: green;
+    width: 100%;
+    background-color: rgb(var(--lightpurp));
+    display: flex;
+    flex-direction: row;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.right {
+    align-items: center;
 }
 

@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import io from 'socket.io-client';
+import styles from '/styles/Home.module.css'
+import 'typeface-inter';
 
-const socket = io('https://a3f1-129-100-255-61.ngrok-free.app'); // Replace with your server URL
+const socket = io('https://c53b-129-100-255-61.ngrok-free.app'); // Replace with your Ngrok URL
 
 export default function Home() {
   const [detectedObjects, setDetectedObjects] = useState([]);
@@ -41,11 +43,11 @@ export default function Home() {
   // , [])
 
   return (
-    <div>
+    <div className={styles.dashboardContent}>
       <button onClick={enterImage}>Detect Objects</button>
       <div>
         {detectedObjects.map((object, index) => (
-          <div key={index}>
+          <div key={index} className={styles.detectedObject}>
             <p>Class Name: {object.className}</p>
             <p>Confidence: {object.confidence}%</p>
             <p>Time: {object.time}</p>
@@ -58,6 +60,21 @@ export default function Home() {
           </div>
         ))}
       </div>
+      <h2>Welcome to the Dashboard</h2>
+      <div className={styles.widget}>
+        <h3>Widget 1</h3>
+        <p>Content for Widget 1 goes here...</p>
+      </div>
+      <div className={styles.widget}>
+        <h3>Widget 2</h3>
+        <p>Content for Widget 2 goes here...</p>
+      </div>
+      <div className={styles.widget}>
+        <h3>Widget 3</h3>
+        <p>Content for Widget 3 goes here...</p>
+      </div>
+      {/* Add more widgets as needed */}
     </div>
+    
   );
 }

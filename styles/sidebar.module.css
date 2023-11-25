@@ -1,3 +1,23 @@
 .sidebar {
-    width: 100px;
+    color: white;
+    width: 300px;
+    background-color: rgb(var(--darkpurp));
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
 }
+.sidebar div {
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
+.sidebar h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.sidebar h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+

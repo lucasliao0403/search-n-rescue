@@ -2,3 +2,24 @@
 .banner {
   background-color: rgb(var(--lightpurp));
 }
+
+.dashboardContent {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: calc(100vw - 300px); /* Ensure the container takes the full width of the viewport */
+  /* height: 100vh; */
+  overflow-y: scroll;
+}
+
+.detectedObject {
+  margin-bottom: 20px;
+}
+
+.widget {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
