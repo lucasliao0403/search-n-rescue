@@ -9,6 +9,20 @@ const socket = io('https://c53b-129-100-255-61.ngrok-free.app'); // Replace with
 export default function Home() {
   const [detectedObjects, setDetectedObjects] = useState([]);
 
+  async function enterImage() {
+    try {
+      // Fetch data from the server
+      const response = await axios.get("http://localhost:3001/data"); // Replace with your backend server URL and route
+
+      // Update the state with the fetched data
+      setDetectedObjects(response.data);
+    } catch (error) {
+      console.warn("Error:", error.message);
+    }
+  }
+
+  enterImage();
+
   useEffect(() => {
     // Listen for objectDetected event from the server
     socket.on('objectDetected', (data) => {
@@ -23,18 +37,6 @@ export default function Home() {
       socket.off('objectDetected');
     };
   }, []);
-
-  async function enterImage() {
-    try {
-      // Fetch data from the server
-      const response = await axios.get("http://localhost:3001/data"); // Replace with your backend server URL and route
-
-      // Update the state with the fetched data
-      setDetectedObjects(response.data);
-    } catch (error) {
-      console.warn("Error:", error.message);
-    }
-  }
 
   
 
