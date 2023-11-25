@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <div className={styles.dashboardContent}>
-      <button onClick={enterImage}>Detect Objects</button>
+      <button className={styles.button} onClick={enterImage}>Detect Objects</button>
       <div className={styles.cardContainer}>
         {detectedObjects.map((object, index) => (
           <div key={index} className={styles.detectedObject}>
@@ -60,20 +60,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <h2>Welcome to the Dashboard</h2>
-      <div className={styles.widget}>
-        <h3>Widget 1</h3>
-        <p>Content for Widget 1 goes here...</p>
-      </div>
-      <div className={styles.widget}>
-        <h3>Widget 2</h3>
-        <p>Content for Widget 2 goes here...</p>
-      </div>
-      <div className={styles.widget}>
-        <h3>Widget 3</h3>
-        <p>Content for Widget 3 goes here...</p>
-      </div>
-      {/* Add more widgets as needed */}
+      
     </div>
     
   );
