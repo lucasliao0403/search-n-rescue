@@ -52,6 +52,7 @@ export default function Home() {
           <div key={index} className={styles.detectedObject}>
             <p>Class Name: {object.className}</p>
             <p>Confidence: {object.confidence}%</p>
+            <p>Coordinates: lat: {object.location.lat}, long: {object.location.long}</p>
             <p>Time: {object.time}</p>
             <img
               src={`data:image/jpeg;base64, ${object.image}`}

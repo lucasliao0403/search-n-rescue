@@ -9,7 +9,7 @@
   padding: 20px;
   width: calc(100vw - 300px); /* Ensure the container takes the full width of the viewport */
   /* height: 100vh; */
-  overflow-y: scroll;
+  overflow-y:hidden;
 }
 
 .detectedObject {
@@ -77,5 +77,5 @@
 }
 
 .button:hover{
-  background-color: rgb(var(--purppurp));
+  background-color: rgb(var(--medpurp));
 }

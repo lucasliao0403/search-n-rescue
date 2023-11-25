@@ -7,10 +7,8 @@ function Sidebar() {
     <div className={styles.sidebar}>
         <div> <h1>Search N Rescue</h1> </div>
         <div className={styles.body}>
-            <div>
-              <Link className={styles.link} href="/map">Map</Link>
-              <Link className={styles.link} href="/">Home</Link>
-            </div>
+          <div className={styles.linkwrapper}> <Link className={styles.link} href="/">Home</Link> </div>
+          <div className={styles.linkwrapper}> <Link className={styles.link} href="/map">Map</Link> </div>
         </div>
         
     </div>

@@ -18,7 +18,7 @@ function Map(props) {
     };
 
     const markers = useMemo(() => [
-        { position: { lat: 43.0097715088247, lng: -81.27267789091229 }, title: 'Marker 1', content: 'Info for Marker 1' },
+        { position: { lat: 43.0107715088247, lng: -81.27267789091229 }, title: 'Marker 1', content: 'Info for Marker 1' },
         // Add more markers as needed
     ], []);
 
