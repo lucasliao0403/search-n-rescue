@@ -34,6 +34,12 @@ export default function Home() {
     }
   }
 
+  
+
+  // useEffect()(
+  //   fetchImages()
+  // , [])
+
   return (
     <div>
       <button onClick={enterImage}>Detect Objects</button>
