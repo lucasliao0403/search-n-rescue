@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.19.2",
     "axios": "^1.6.2",
+    "google-maps": "^4.3.3",
     "mongodb": "^6.3.0",
     "next": "14.0.3",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-google-maps": "^9.4.5",
     "react-icons": "^4.12.0",
+    "recompose": "^0.30.0",
     "socket.io-client": "^4.7.2",
     "typeface-inter": "^3.18.1"
   }
