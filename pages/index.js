@@ -59,7 +59,6 @@ export default function Home() {
           {detectedObjects.map((object, index) => (
             <div key={index} className={styles.detectedObject}>
               <p>Class Name: {object.className}</p>
-              <p>Confidence: {object.confidence}%</p>
               <p>Coordinates: lat: {object.location.lat}, long: {object.location.long}</p>
               <p>Time: {object.time}</p>
               <img
