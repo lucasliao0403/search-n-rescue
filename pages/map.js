@@ -1,9 +1,39 @@
-import { useMemo, React, useState } from 'react';
+'use client';
+
+import { useMemo, React, useState, useEffect } from 'react';
 import { GoogleMap, Marker, InfoWindow, LoadScript, useJsApiLoader } from "@react-google-maps/api";
 import styles from '/styles/Map.module.css';
+import axios from 'axios';
+
 
 function Map(props) {
     const [selectedMarker, setSelectedMarker] = useState(null);
+    const [coords, setCoords] = useState([]);
+    const [detectedObjects, setDetectedObjects] = useState([]);
+    console.log(coords)
+
+    // for(let i = 0; i < detectedObjects.length; i+=1) (
+    //     setCoords(coords => [...coords, {lat: detectedObjects[i].lat, lng: detectedObjects[i].long}])
+    // )
+
+    
+
+    async function enterImage() {
+      try {
+        // Fetch data from the server
+        const response = await axios.get("http://localhost:3001/data"); // Replace with your backend server URL and route
+  
+        // Update the state with the fetched data
+        setDetectedObjects(response.data);
+      } catch (error) {
+        console.warn("Error:", error.message);
+      }
+    }
+
+    useEffect(()=>{
+        console.log("FETCH IMAGES")
+        enterImage()
+    , []})
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -17,10 +47,17 @@ function Map(props) {
         height: 'inherit'
     };
 
-    const markers = useMemo(() => [
-        { position: { lat: 43.0107715088247, lng: -81.27267789091229 }, title: 'Marker 1', content: 'Info for Marker 1' },
-        // Add more markers as needed
-    ], []);
+    console.log(detectedObjects)
+
+    const markers = useMemo(() => {
+        return detectedObjects.map((object) => ({
+            position: { lat: object.location.lat, lng: object.location.long },
+            title: 'Marker ' + object.id,
+            content: 'Info for Marker ' + object.id
+        }));
+    }, [detectedObjects]);
+
+    // console.log(markers)
 
     const handleMarkerClick = (marker) => {
         setSelectedMarker(marker);
@@ -30,15 +67,17 @@ function Map(props) {
         setSelectedMarker(null);
     };
 
+    
+
     return (
         <div className={styles.map}>
             <div className={styles.mapwrapper}>
                 <div className={styles.mapcontainer}>
                     {isLoaded && (
                         <GoogleMap zoom={13} center={{ lat: 43.0097715088247, lng: -81.27267789091229 }} mapContainerStyle={containerStyle}>
-                            {markers.map((marker, index) => (
+                            {markers.map((marker) => (
                                 <Marker
-                                    key={index}
+                                    key={marker.title}
                                     position={marker.position}
                                     onClick={() => handleMarkerClick(marker)}
                                 />
