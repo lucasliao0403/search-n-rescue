@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <div className={styles.dashboardContent}>
       <button onClick={enterImage}>Detect Objects</button>
-      <div>
+      <div className={styles.cardContainer}>
         {detectedObjects.map((object, index) => (
           <div key={index} className={styles.detectedObject}>
             <p>Class Name: {object.className}</p>

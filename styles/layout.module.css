@@ -7,10 +7,7 @@
     
 }
 
-.layout div {
+.main {
     flex-grow: 1;
 }
 
-.sidebar {
-    
-}
