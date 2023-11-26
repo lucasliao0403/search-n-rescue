@@ -61,11 +61,6 @@ const PriorityCards = ({
 
   return (
     <div>
-      <h3 className={styles.priorityheader}>
-        Level {priority} Priority
-      </h3>
-
-      
 
       {priorityCard.map((card) => {
         if (

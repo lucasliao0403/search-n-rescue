@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/calls.module.css'
 import { useState } from 'react'
 import { motion } from "framer-motion"
 import { AiFillCloseCircle } from "react-icons/ai";
@@ -74,15 +74,7 @@ const inter = Inter({ subsets: ['latin'] })
         </div> 
         : <></> }
         <div>
-            <div className={styles.attended}>
-                <button onClick={() => setAutomated(true)} className={`${styles.attendedselect} ${automated ? `${styles.attendedselectactive}` : ""}`}>
-                    <h3>Automated</h3>
-                </button>
-                <button
-                    onClick={() => setAutomated(false)} className={`${styles.attendedselect} ${!automated ? `${styles.attendedselectactive}` : ""}`}>
-                    <h3>Live Attended</h3>
-                </button>
-            </div>
+          
       </div>
 
     <div className={styles.emergencies}>

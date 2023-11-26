@@ -52,13 +52,8 @@ function Map(props) {
     const markers = useMemo(() => {
         return detectedObjects.map((object) => ({
             position: { lat: object.location.lat, lng: object.location.long },
-<<<<<<< Updated upstream
             title: '🚑Request for AID: ' + object.className,
             content: '🕛Time requested: ' + object.time
-=======
-            title: 'Marker ' + object._id,
-            content: 'Info for Marker ' + object._id
->>>>>>> Stashed changes
         }));
     }, [detectedObjects]);
 
