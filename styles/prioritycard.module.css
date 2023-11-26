@@ -47,9 +47,8 @@
 
 
 .cardtitle {
-    padding-top: 0.5rem;
-padding-bottom: 0.5rem; 
 font-weight: 700; 
+margin: .2rem 0;
 }
 
 .cardcontent {
@@ -85,6 +84,7 @@ line-height: 1rem;
 .priority h3 {
     font-size: 0.875rem;
     line-height: 1.25rem; 
+    /* margin: .5rem 0; */
 }
 
 .priorityselect {
@@ -104,7 +104,7 @@ line-height: 1rem;
     flex-direction: column;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem; 
-    gap: 1.25rem; 
+    /* gap: 1.25rem;  */
     color: gray;
 }
 

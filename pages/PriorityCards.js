@@ -85,22 +85,6 @@ const PriorityCards = ({
 
               <div className={styles.cardcontent}>
                 {/**first section */}
-                <div className={styles.priority}>
-                  <h3>Priority</h3>
-                  <select
-                    value={card.priority}
-                    placeholder="select priority level"
-                    onChange={updateLabel}
-                    className={styles.priorityselect}
-                  >
-                    <option value={0}>0</option>
-                    <option value={1}>1</option>
-                    <option value={2}>2</option>
-                    <option value={3}>3</option>
-                    <option value={4}>4</option>
-                    <option value={5}>5</option>
-                  </select>
-                </div>
                 
                 <div className={styles.calldata}>
                   <h3 className="">Phone Number: <span>{card.number}</span></h3>
@@ -134,16 +118,6 @@ const PriorityCards = ({
                             </p>
                         </div> 
                     </div>
-
-                    <h1 className={styles.dispatchtitle}> Dispatch </h1>
-                    <div className={styles.line}/>
-
-                    <div className={styles.dispatch}>
-                        <motion.div className={`${styles.dispatchicon} ${styles.icon1}`} whileHover={{ scale: 1.1, }}> <p>TORONTO FIRE SERVICES</p> </motion.div>
-                        <motion.div className={`${styles.dispatchicon} ${styles.icon2}`} whileHover={{ scale: 1.1, }}> <p>TORONTO POLICE SERVICES</p> </motion.div>
-                        <motion.div className={`${styles.dispatchicon} ${styles.icon3}`} whileHover={{ scale: 1.1, }}> <p>TORONTO PARAMEDIC SERVICES</p> </motion.div>
-                    </div>
-
               </div>
             </div>
           ) : 
